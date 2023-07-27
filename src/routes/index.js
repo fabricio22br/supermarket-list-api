@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 
 router.get('/list-items', async (req, res) => {
   try {
-    const { username } = req.header
+    const { username } = req.headers
     if (!username) {
       return res.status(401).json({ error: 'Username is required' })
     }
@@ -23,7 +23,7 @@ router.get('/list-items', async (req, res) => {
 
 router.post('/list-item', async (req, res) => {
   try {
-    const { username } = req.header
+    const { username } = req.headers
     if (!username) {
       return res.status(401).json({ error: 'Username is required' })
     }
